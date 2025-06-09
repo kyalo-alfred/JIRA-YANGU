@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses + CV Builder - JiraYangu</title>
+    <link rel="stylesheet" href="courses.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Courses + CV Builder</h1>
+            <a href="homepage.html" class="back-btn">← Back to Homepage</a>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('courses')">Courses</button>
+                <button class="tab-btn" onclick="showTab('reader')">Course Reader</button>
+                <button class="tab-btn" onclick="showTab('quiz')">Quiz</button>
+                <button class="tab-btn" onclick="showTab('cv')">CV Builder</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Courses Tab -->
+            <section id="courses" class="tab-content active">
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-info">
+                            <h3>React Development Fundamentals</h3>
+                            <p class="instructor">👨‍💻 Jane Doe</p>
+                            <div class="course-meta">
+                                <span>8 hours</span>
+                                <span>⭐ 4.8</span>
+                                <span>1,250 students</span>
+                            </div>
+                            <div class="progress-section">
+                                <div class="progress-header">
+                                    <span>Progress</span>
+                                    <span>65%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div class="course-actions">
+                                <button class="btn-outline" onclick="showTab('reader')">Continue Learning</button>
+                                <button class="btn-primary">View Course</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-info">
+                            <h3>Digital Marketing Mastery</h3>
+                            <p class="instructor">👨‍💼 John Smith</p>
+                            <div class="course-meta">
+                                <span>12 hours</span>
+                                <span>⭐ 4.6</span>
+                                <span>890 students</span>
+                            </div>
+                            <div class="progress-section">
+                                <div class="progress-header">
+                                    <span>Progress</span>
+                                    <span>30%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 30%"></div>
+                                </div>
+                            </div>
+                            <div class="course-actions">
+                                <button class="btn-outline" onclick="showTab('reader')">Continue Learning</button>
+                                <button class="btn-primary">View Course</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Course Reader Tab -->
+            <section id="reader" class="tab-content">
+                <div class="reader-layout">
+                    <div class="video-section">
+                        <div class="video-player">
+                            <div class="video-placeholder">
+                                <div class="play-icon">▶️</div>
+                                <p>Video Player</p>
+                                <small>Introduction to React Components</small>
+                            </div>
+                        </div>
+                        <div class="lesson-content">
+                            <h3>Lesson Overview</h3>
+                            <p>In this lesson, you'll learn about React components and how they form the building blocks of React applications. We'll cover:</p>
+                            <ul>
+                                <li>What are components?</li>
+                                <li>Functional vs Class components</li>
+                                <li>Props and data flow</li>
+                                <li>Component composition</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="course-progress">
+                        <h3>Course Progress</h3>
+                        <div class="lessons-list">
+                            <div class="lesson-item completed">
+                                <span class="lesson-icon">✅</span>
+                                <div class="lesson-info">
+                                    <p>Introduction to React</p>
+                                    <small>45 min</small>
+                                </div>
+                            </div>
+                            <div class="lesson-item completed">
+                                <span class="lesson-icon">✅</span>
+                                <div class="lesson-info">
+                                    <p>Components and Props</p>
+                                    <small>60 min</small>
+                                </div>
+                            </div>
+                            <div class="lesson-item current">
+                                <span class="lesson-icon">▶️</span>
+                                <div class="lesson-info">
+                                    <p>State Management</p>
+                                    <small>75 min</small>
+                                </div>
+                            </div>
+                            <div class="lesson-item">
+                                <span class="lesson-icon">⏳</span>
+                                <div class="lesson-info">
+                                    <p>Hooks and Effects</p>
+                                    <small>90 min</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz Tab -->
+            <section id="quiz" class="tab-content">
+                <div class="quiz-container">
+                    <h2>🏆 Course Quiz</h2>
+                    <div class="quiz-questions">
+                        <div class="question">
+                            <h3>1. What is the virtual DOM in React?</h3>
+                            <div class="options">
+                                <label><input type="radio" name="q1" value="0"> A real DOM element</label>
+                                <label><input type="radio" name="q1" value="1"> A JavaScript representation of the DOM</label>
+                                <label><input type="radio" name="q1" value="2"> A CSS framework</label>
+                                <label><input type="radio" name="q1" value="3"> A database</label>
+                            </div>
+                        </div>
+                        <div class="question">
+                            <h3>2. Which hook is used for state management in functional components?</h3>
+                            <div class="options">
+                                <label><input type="radio" name="q2" value="0"> useEffect</label>
+                                <label><input type="radio" name="q2" value="1"> useState</label>
+                                <label><input type="radio" name="q2" value="2"> useContext</label>
+                                <label><input type="radio" name="q2" value="3"> useReducer</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz-actions">
+                        <button class="btn-outline">Save Progress</button>
+                        <button class="btn-primary" onclick="submitQuiz()">Submit Quiz</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CV Builder Tab -->
+            <section id="cv" class="tab-content">
+                <div class="cv-builder">
+                    <div class="templates-section">
+                        <h2>Choose Your CV Template</h2>
+                        <div class="templates-grid">
+                            <div class="template-card">
+                                <div class="template-preview">
+                                    <div class="template-placeholder">👤</div>
+                                </div>
+                                <h3>Professional Template</h3>
+                                <p>Corporate</p>
+                                <button class="btn-primary">Use Template</button>
+                            </div>
+                            <div class="template-card">
+                                <div class="template-preview">
+                                    <div class="template-placeholder">🎨</div>
+                                </div>
+                                <h3>Creative Template</h3>
+                                <p>Design</p>
+                                <button class="btn-primary">Use Template</button>
+                            </div>
+                            <div class="template-card">
+                                <div class="template-preview">
+                                    <div class="template-placeholder">📄</div>
+                                </div>
+                                <h3>Minimal Template</h3>
+                                <p>Clean</p>
+                                <button class="btn-primary">Use Template</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certificate-section">
+                        <h2>Download Certificate</h2>
+                        <div class="certificate-card">
+                            <div class="certificate-icon">🏆</div>
+                            <h3>Course Completion Certificate</h3>
+                            <p>Complete all lessons and pass the quiz to earn your certificate</p>
+                            <button class="btn-primary">📥 Download Certificate</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Remove active class from all tab buttons
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        function submitQuiz() {
+            const q1Answer = document.querySelector('input[name="q1"]:checked');
+            const q2Answer = document.querySelector('input[name="q2"]:checked');
+
+            if (!q1Answer || !q2Answer) {
+                alert('Please answer all questions before submitting.');
+                return;
+            }
+
+            let score = 0;
+            if (q1Answer.value === '1') score++; // Correct answer for q1
+            if (q2Answer.value === '1') score++; // Correct answer for q2
+
+            const percentage = (score / 2) * 100;
+            alert(`Quiz completed! Your score: ${score}/2 (${percentage}%)`);
+        }
+    </script>
+</body>
+</html>
