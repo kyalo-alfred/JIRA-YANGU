@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../assets/css/marketplace.css';
 
 const initialProducts = [
   { id: 1, name: 'Professional Laptop Stand', price: 3500, discount: 17, seller: 'Techamek Kenya', rating: 5, reviews: 124, originalPrice: 4200, icon: '💻', inStock: true },

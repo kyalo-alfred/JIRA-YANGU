@@ -1,1 +1,69 @@
- 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+body, .mentorship-container {
+  font-family: 'Nunito', Arial, sans-serif;
+  background: linear-gradient(120deg, #f8fafc 0%, #e6f4ea 100%);
+  color: #222;
+}
+.mentorship-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.mentor-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(26,127,55,0.08), 0 1.5px 4px rgba(26,127,55,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.mentor-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(26,127,55,0.12), 0 2px 8px rgba(26,127,55,0.06);
+}
+.mentor-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a7f37;
+  margin-bottom: 0.5rem;
+}
+.mentor-specialty {
+  color: #15803d;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.mentor-description {
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.btn {
+  background: #1a7f37;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(26,127,55,0.08);
+}
+.btn:hover {
+  background: #15803d;
+}
+input[type="text"], select {
+  border: 1.5px solid #d1fae5;
+  border-radius: 6px;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.7rem;
+  width: 100%;
+  font-family: 'Nunito', Arial, sans-serif;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+input[type="text"]:focus, select:focus {
+  border: 1.5px solid #1a7f37;
+  box-shadow: 0 0 0 2px #bbf7d0;
+  outline: none;
+} 

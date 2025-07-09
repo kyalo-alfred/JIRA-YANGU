@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../assets/css/homepage.css';
 
 function Homepage() {
   return (
@@ -11,10 +12,7 @@ function Homepage() {
             <h1>JiraYangu</h1>
             <p>Your all-in-one platform for career development and opportunities</p>
           </div>
-          <div className="auth-buttons">
-            <Link to="/login" className="btn btn-ghost">Login</Link>
-            <Link to="/signup" className="btn btn-primary">Sign Up</Link>
-          </div>
+          {/* Removed auth-buttons here, now handled in navbar */}
         </div>
       </header>
 
@@ -36,14 +34,8 @@ function Homepage() {
                   <div className="module-icon job-board" role="img" aria-label="Job Board">🧭</div>
                   <h3>Job Board + Geo-Location</h3>
                 </div>
-                <p className="module-description">Find jobs near you with advanced location filtering</p>
-                <ul className="module-features">
-                  <li>Job cards UI + filters</li>
-                  <li>Location access using JS</li>
-                  <li>Map display (Leaflet or static)</li>
-                  <li>Real-time job matching</li>
-                </ul>
-                <Link to="/jobs" className="module-link">Explore Module</Link>
+                <p className="module-description">Find jobs near you with advanced location filtering, real-time matching, and map display.</p>
+                <Link to="/jobboard" className="module-link">Explore Module</Link>
               </div>
             </div>
 
@@ -55,13 +47,7 @@ function Homepage() {
                   <div className="module-icon courses" role="img" aria-label="Courses">🎓</div>
                   <h3>Courses + CV Builder</h3>
                 </div>
-                <p className="module-description">Learn new skills and build your professional CV</p>
-                <ul className="module-features">
-                  <li>Course reader UI</li>
-                  <li>Quiz UI</li>
-                  <li>Certificate download</li>
-                  <li>CV template UI</li>
-                </ul>
+                <p className="module-description">Learn new skills, take quizzes, earn certificates, and build your professional CV.</p>
                 <Link to="/courses" className="module-link">Explore Module</Link>
               </div>
             </div>
@@ -74,13 +60,7 @@ function Homepage() {
                   <div className="module-icon marketplace" role="img" aria-label="Marketplace">🛒</div>
                   <h3>Marketplace + M-Pesa Escrow</h3>
                 </div>
-                <p className="module-description">Buy and sell with secure M-Pesa transactions</p>
-                <ul className="module-features">
-                  <li>Product listing UI</li>
-                  <li>Order flow UI</li>
-                  <li>M-Pesa popup simulation</li>
-                  <li>Delivery code check</li>
-                </ul>
+                <p className="module-description">Buy and sell with secure M-Pesa transactions, order flow, and delivery tracking.</p>
                 <Link to="/marketplace" className="module-link">Explore Module</Link>
               </div>
             </div>
@@ -93,13 +73,7 @@ function Homepage() {
                   <div className="module-icon mentorship" role="img" aria-label="Mentorship">🧠</div>
                   <h3>Mentorship + Reports</h3>
                 </div>
-                <p className="module-description">Connect with mentors and track your progress</p>
-                <ul className="module-features">
-                  <li>Mentor profile cards UI</li>
-                  <li>Booking form UI</li>
-                  <li>Report dashboard (charts)</li>
-                  <li>Progress tracking</li>
-                </ul>
+                <p className="module-description">Connect with mentors, book sessions, and track your progress with reports.</p>
                 <Link to="/mentorship" className="module-link">Explore Module</Link>
               </div>
             </div>

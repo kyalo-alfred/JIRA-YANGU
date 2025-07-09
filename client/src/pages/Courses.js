@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../assets/css/courses.css';
 
 const tabList = [
   { id: 'courses', label: 'Courses' },
