@@ -6,10 +6,10 @@ import { useAuth } from './Auth/AuthContext';
 
 // Inline styles for the navigation bar and its elements
 const navStyle = {
-  background: 'linear-gradient(90deg, #1a7f37 60%, #22c55e 100%)', // Green gradient background
-  color: '#fff',
+  background: 'linear-gradient(90deg, #181f2a 60%, #232946 100%)', // Dark blue gradient background
+  color: '#f3f6fa',
   padding: '1rem 0',
-  boxShadow: '0 2px 12px rgba(26,127,55,0.08)',
+  boxShadow: '0 2px 12px rgba(37,99,235,0.10)',
   borderRadius: '0 0 18px 18px',
   margin: '0 0 1.5rem 0',
   fontFamily: "'Nunito', Arial, sans-serif"
@@ -21,7 +21,7 @@ const navLinks = {
   alignItems: 'center',
 };
 const linkStyle = {
-  color: '#fff',
+  color: '#f3f6fa',
   textDecoration: 'none',
   fontWeight: 'bold',
   fontSize: '1.08rem',
@@ -30,15 +30,15 @@ const linkStyle = {
   transition: 'background 0.2s, color 0.2s',
 };
 const activeLink = {
-  background: '#fff',
-  color: '#1a7f37', // Green text for active link
+  background: '#2563eb',
+  color: '#fff', // White text for active link
 };
 const avatarStyle = {
   width: 32,
   height: 32,
   borderRadius: '50%',
   objectFit: 'cover',
-  border: '2px solid #1a7f37',
+  border: '2px solid #2563eb',
   marginRight: 8,
 };
 
@@ -75,7 +75,7 @@ function Header() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               {/* User avatar: fallback to generated avatar if none uploaded */}
               <img
-                src={user.avatar || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.name || 'User') + '&background=22c55e&color=fff'}
+                src={user.avatar || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.name || 'User') + '&background=2563eb&color=fff'}
                 alt="Profile"
                 style={avatarStyle}
               />

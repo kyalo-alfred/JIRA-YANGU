@@ -52,5 +52,3 @@ client/
 3. (Backend integration coming soon.)
 
 ---
-
-
