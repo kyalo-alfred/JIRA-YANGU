@@ -1,6 +1,9 @@
+// Import React and hooks for state management
 import React, { useState } from 'react';
+// Import CSS for courses page styling
 import '../assets/css/courses.css';
 
+// List of navigation tabs for the courses module
 const tabList = [
   { id: 'courses', label: 'Courses' },
   { id: 'reader', label: 'Course Reader' },
@@ -8,12 +11,14 @@ const tabList = [
   { id: 'cv', label: 'CV Builder' },
 ];
 
+// Courses component: Main page for courses, quizzes, and CV builder
 function Courses() {
+  // State to track the currently active tab
   const [activeTab, setActiveTab] = useState('courses');
 
   return (
     <div className="courses-container">
-      {/* Header */}
+      {/* Header section */}
       <header className="header">
         <div className="container">
           <h1>Courses + CV Builder</h1>
@@ -38,10 +43,10 @@ function Courses() {
         </div>
       </nav>
 
-      {/* Main Content */}
+      {/* Main Content: Render content based on active tab */}
       <main className="main-content">
         <div className="container">
-          {/* Courses Tab */}
+          {/* Courses Tab: List of available courses */}
           {activeTab === 'courses' && (
             <section id="courses" className="tab-content active">
               <div className="courses-grid">
@@ -55,6 +60,7 @@ function Courses() {
                       <span>⭐ 4.8</span>
                       <span>1,250 students</span>
                     </div>
+                    {/* Progress bar for course completion */}
                     <div className="progress-section">
                       <div className="progress-header">
                         <span>Progress</span>
@@ -64,6 +70,7 @@ function Courses() {
                         <div className="progress-fill" style={{ width: '65%' }}></div>
                       </div>
                     </div>
+                    {/* Course action buttons */}
                     <div className="course-actions">
                       <button className="btn-outline" onClick={() => setActiveTab('reader')}>Continue Learning</button>
                       <button className="btn-primary">View Course</button>
@@ -79,6 +86,7 @@ function Courses() {
                       <span>⭐ 4.6</span>
                       <span>890 students</span>
                     </div>
+                    {/* Progress bar for course completion */}
                     <div className="progress-section">
                       <div className="progress-header">
                         <span>Progress</span>
@@ -88,6 +96,7 @@ function Courses() {
                         <div className="progress-fill" style={{ width: '30%' }}></div>
                       </div>
                     </div>
+                    {/* Course action buttons */}
                     <div className="course-actions">
                       <button className="btn-outline" onClick={() => setActiveTab('reader')}>Continue Learning</button>
                       <button className="btn-primary">View Course</button>
@@ -98,7 +107,7 @@ function Courses() {
             </section>
           )}
 
-          {/* Course Reader Tab */}
+          {/* Course Reader Tab: Video and lesson content */}
           {activeTab === 'reader' && (
             <section id="reader" className="tab-content active">
               <div className="reader-layout">
@@ -121,6 +130,7 @@ function Courses() {
                     </ul>
                   </div>
                 </div>
+                {/* Course progress sidebar */}
                 <div className="course-progress">
                   <h3>Course Progress</h3>
                   <div className="lessons-list">
@@ -158,7 +168,7 @@ function Courses() {
             </section>
           )}
 
-          {/* Quiz Tab */}
+          {/* Quiz Tab: Example quiz questions */}
           {activeTab === 'quiz' && (
             <section id="quiz" className="tab-content active">
               <div className="quiz-container">
@@ -191,7 +201,7 @@ function Courses() {
             </section>
           )}
 
-          {/* CV Builder Tab */}
+          {/* CV Builder Tab: Choose a CV template */}
           {activeTab === 'cv' && (
             <section id="cv" className="tab-content active">
               <div className="cv-builder">

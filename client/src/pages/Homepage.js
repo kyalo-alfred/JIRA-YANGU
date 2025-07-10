@@ -1,11 +1,15 @@
+// Import React library
 import React from 'react';
+// Import Link for navigation between routes
 import { Link } from 'react-router-dom';
+// Import homepage-specific CSS for styling
 import '../assets/css/homepage.css';
 
+// Homepage component: Main landing page for the app
 function Homepage() {
   return (
     <div className="homepage-container">
-      {/* Header Section */}
+      {/* Header Section: Title and subtitle */}
       <header className="header">
         <div className="header-container">
           <div className="header-title">
@@ -16,7 +20,7 @@ function Homepage() {
         </div>
       </header>
 
-      {/* Main Content */}
+      {/* Main Content: Overview of modules */}
       <main className="main-content">
         <div className="container">
           <div className="section-header">
@@ -24,9 +28,9 @@ function Homepage() {
             <p>Choose from four comprehensive modules designed to accelerate your career growth</p>
           </div>
 
-          {/* Modules Grid */}
+          {/* Modules Grid: Four main feature cards */}
           <div className="modules-grid">
-            {/* Job Board Module */}
+            {/* Job Board Module Card */}
             <div className="module-card">
               <div className="module-header job-board"></div>
               <div className="module-content">
@@ -39,7 +43,7 @@ function Homepage() {
               </div>
             </div>
 
-            {/* Courses Module */}
+            {/* Courses Module Card */}
             <div className="module-card">
               <div className="module-header courses"></div>
               <div className="module-content">
@@ -52,7 +56,7 @@ function Homepage() {
               </div>
             </div>
 
-            {/* Marketplace Module */}
+            {/* Marketplace Module Card */}
             <div className="module-card">
               <div className="module-header marketplace"></div>
               <div className="module-content">
@@ -65,7 +69,7 @@ function Homepage() {
               </div>
             </div>
 
-            {/* Mentorship Module */}
+            {/* Mentorship Module Card */}
             <div className="module-card">
               <div className="module-header mentorship"></div>
               <div className="module-content">
@@ -81,23 +85,26 @@ function Homepage() {
         </div>
       </main>
 
-      {/* Features Section */}
+      {/* Features Section: Highlights unique selling points */}
       <section className="features-section">
         <div className="container">
           <div className="section-header">
             <h2>Why Consider JiraYangu</h2>
           </div>
           <div className="features-grid">
+            {/* Location-Based Feature */}
             <div className="feature-card">
               <div className="feature-icon" role="img" aria-label="Location">📍</div>
               <h3>Location-Based</h3>
               <p>Find opportunities near you with advanced geo-location features</p>
             </div>
+            {/* Secure Transactions Feature */}
             <div className="feature-card">
               <div className="feature-icon" role="img" aria-label="Secure">🛡️</div>
               <h3>Secure Transactions</h3>
               <p>M-Pesa integration ensures safe and reliable payments</p>
             </div>
+            {/* Expert Mentorship Feature */}
             <div className="feature-card">
               <div className="feature-icon" role="img" aria-label="Mentorship">👥</div>
               <h3>Expert Mentorship</h3>

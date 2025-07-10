@@ -1,6 +1,9 @@
+// Import React and hooks for state management
 import React, { useState } from 'react';
+// Import CSS for courses page styling
 import '../../assets/css/courses.css';
 
+// Mock course data for demonstration
 const mockCourses = [
   {
     id: 1,
@@ -28,9 +31,12 @@ const mockCourses = [
   }
 ];
 
+// CoursesPage component: Display available courses and handle enrollment
 function CoursesPage() {
+  // State for tracking enrolled courses
   const [enrolled, setEnrolled] = useState([]);
 
+  // Handle course enrollment
   const handleEnroll = (course) => {
     if (!enrolled.find(c => c.id === course.id)) {
       setEnrolled([...enrolled, course]);
@@ -43,6 +49,7 @@ function CoursesPage() {
         <h2>Courses</h2>
         <p>Learn new skills and advance your career</p>
       </div>
+      {/* Display list of available courses */}
       <div className="courses-listings">
         {mockCourses.map(course => (
           <div className="course-card" key={course.id}>
@@ -59,6 +66,7 @@ function CoursesPage() {
           </div>
         ))}
       </div>
+      {/* Display enrolled courses section */}
       {enrolled.length > 0 && (
         <div className="enrolled-section">
           <h3>Enrolled Courses</h3>

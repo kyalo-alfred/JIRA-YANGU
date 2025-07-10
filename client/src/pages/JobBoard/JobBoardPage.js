@@ -1,6 +1,9 @@
+// Import React and hooks for state management
 import React, { useState } from 'react';
+// Import CSS for job board page styling
 import '../../assets/css/job-board.css';
 
+// Mock job data for demonstration
 const mockJobs = [
   {
     id: 1,
@@ -36,19 +39,27 @@ const mockJobs = [
   }
 ];
 
+// JobBoardPage component: Display job listings and handle applications
 function JobBoardPage() {
+  // State for search functionality
   const [search, setSearch] = useState('');
+  // State for selected job in modal
   const [selectedJob, setSelectedJob] = useState(null);
+  // State for modal visibility
   const [showModal, setShowModal] = useState(false);
+  // State for applicant form data
   const [applicant, setApplicant] = useState({ name: '', email: '', message: '' });
+  // State for submission status
   const [submitted, setSubmitted] = useState(false);
 
+  // Filter jobs based on search term
   const filteredJobs = mockJobs.filter(job =>
     job.title.toLowerCase().includes(search.toLowerCase()) ||
     job.company.toLowerCase().includes(search.toLowerCase()) ||
     job.location.toLowerCase().includes(search.toLowerCase())
   );
 
+  // Open modal for job application
   const openModal = (job) => {
     setSelectedJob(job);
     setShowModal(true);
@@ -56,15 +67,18 @@ function JobBoardPage() {
     setSubmitted(false);
   };
 
+  // Close modal and reset state
   const closeModal = () => {
     setShowModal(false);
     setSelectedJob(null);
   };
 
+  // Handle form field changes
   const handleChange = (e) => {
     setApplicant({ ...applicant, [e.target.name]: e.target.value });
   };
 
+  // Handle job application submission
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
@@ -76,6 +90,7 @@ function JobBoardPage() {
       <div className="job-board-header">
         <h2>Job Board</h2>
         <p>Find your next opportunity</p>
+        {/* Search input for filtering jobs */}
         <input
           type="text"
           className="job-search"
@@ -85,6 +100,7 @@ function JobBoardPage() {
           style={{ marginTop: '1rem', padding: '0.5rem', width: '300px', borderRadius: '4px', border: '1px solid #d1fae5' }}
         />
       </div>
+      {/* Display filtered job listings */}
       <div className="job-listings">
         {filteredJobs.length === 0 ? (
           <div>No jobs found.</div>
@@ -99,7 +115,7 @@ function JobBoardPage() {
           ))
         )}
       </div>
-      {/* Modal */}
+      {/* Job Application Modal */}
       {showModal && (
         <div className="modal-overlay" style={{ position: 'fixed', top:0, left:0, right:0, bottom:0, background: 'rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center', zIndex:1000 }}>
           <div className="modal-content" style={{ background:'#fff', borderRadius:'8px', padding:'2rem', minWidth:'320px', boxShadow:'0 2px 16px rgba(0,0,0,0.12)' }}>
@@ -111,6 +127,7 @@ function JobBoardPage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display:'flex', flexDirection:'column', gap:'1rem', marginTop:'1rem' }}>
+                {/* Applicant name input */}
                 <input
                   type="text"
                   name="name"
@@ -120,6 +137,7 @@ function JobBoardPage() {
                   required
                   style={{ padding:'0.5rem', borderRadius:'4px', border:'1px solid #d1fae5' }}
                 />
+                {/* Applicant email input */}
                 <input
                   type="email"
                   name="email"
@@ -129,6 +147,7 @@ function JobBoardPage() {
                   required
                   style={{ padding:'0.5rem', borderRadius:'4px', border:'1px solid #d1fae5' }}
                 />
+                {/* Application message textarea */}
                 <textarea
                   name="message"
                   placeholder="Why are you a good fit?"

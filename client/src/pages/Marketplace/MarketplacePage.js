@@ -1,6 +1,8 @@
+// Import React and hooks for state management
 import React, { useState } from 'react';
 // import '../../assets/css/marketplace.css'; // Removed because file does not exist
 
+// Mock product data for the marketplace
 const mockProducts = [
   {
     id: 1,
@@ -36,27 +38,36 @@ const mockProducts = [
   }
 ];
 
+// MarketplacePage component: Display products and handle purchases
 function MarketplacePage() {
+  // State for search functionality
   const [search, setSearch] = useState('');
+  // State for selected product in modal
   const [selectedProduct, setSelectedProduct] = useState(null);
+  // State for modal visibility
   const [showModal, setShowModal] = useState(false);
+  // State for tracking purchased products
   const [purchased, setPurchased] = useState([]);
 
+  // Filter products based on search term
   const filteredProducts = mockProducts.filter(product =>
     product.name.toLowerCase().includes(search.toLowerCase()) ||
     product.seller.toLowerCase().includes(search.toLowerCase())
   );
 
+  // Open modal for product details
   const openModal = (product) => {
     setSelectedProduct(product);
     setShowModal(true);
   };
 
+  // Close modal and reset state
   const closeModal = () => {
     setShowModal(false);
     setSelectedProduct(null);
   };
 
+  // Handle product purchase
   const handleBuy = () => {
     if (selectedProduct && !purchased.includes(selectedProduct.id)) {
       setPurchased([...purchased, selectedProduct.id]);
@@ -69,6 +80,7 @@ function MarketplacePage() {
       <div className="marketplace-header">
         <h2>Marketplace</h2>
         <p>Buy and sell products or services securely</p>
+        {/* Search input for filtering products */}
         <input
           type="text"
           className="marketplace-search"
@@ -78,6 +90,7 @@ function MarketplacePage() {
           style={{ marginTop: '1rem', padding: '0.5rem', width: '300px', borderRadius: '4px', border: '1px solid #d1fae5' }}
         />
       </div>
+      {/* Display filtered products grid */}
       <div className="marketplace-listings-grid">
         {filteredProducts.length === 0 ? (
           <div>No products found.</div>
@@ -100,7 +113,7 @@ function MarketplacePage() {
           ))
         )}
       </div>
-      {/* Modal */}
+      {/* Purchase Confirmation Modal */}
       {showModal && selectedProduct && (
         <div className="modal-overlay" style={{ position: 'fixed', top:0, left:0, right:0, bottom:0, background: 'rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center', zIndex:1000 }}>
           <div className="modal-content" style={{ background:'#fff', borderRadius:'8px', padding:'2rem', minWidth:'320px', boxShadow:'0 2px 16px rgba(0,0,0,0.12)' }}>

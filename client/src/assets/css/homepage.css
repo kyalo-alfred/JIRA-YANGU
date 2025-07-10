@@ -11,6 +11,10 @@ body {
   padding: 2rem 0;
 }
 
+/*
+  Card styles for homepage feature highlights.
+  The .card:hover selector below gives the pop-out effect (card lifts and shadow deepens on hover).
+*/
 .card {
   background: #fff;
   border-radius: 16px;
@@ -19,6 +23,7 @@ body {
   padding: 2rem 1.5rem;
   margin-bottom: 2rem;
 }
+/* Pop-out effect: card lifts and shadow deepens on hover */
 .card:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 8px 32px rgba(26,127,55,0.12), 0 2px 8px rgba(26,127,55,0.06);
@@ -36,6 +41,10 @@ body {
   color: #444;
 }
 
+/*
+  Unified button style for all main actions.
+  .btn:hover darkens the button for feedback.
+*/
 .btn {
   background: #1a7f37;
   color: #fff;
@@ -52,6 +61,9 @@ body {
   background: #15803d;
 }
 
+/*
+  Header and main content layout for homepage.
+*/
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -115,12 +127,19 @@ body {
   font-size: 1.2rem;
   margin: 0;
 }
+/*
+  Grid layout for homepage modules (Job Board, Courses, etc.).
+*/
 .modules-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 2.5rem;
   margin-top: 2.5rem;
 }
+/*
+  Each module-card is a feature module (Job Board, Courses, etc.).
+  The hover effect below gives a subtle pop-out for interactivity.
+*/
 .module-card {
   background: #fff;
   border: none;
@@ -133,6 +152,7 @@ body {
   position: relative;
   transition: box-shadow 0.2s, transform 0.2s;
 }
+/* Pop-out effect for modules: card lifts and shadow deepens on hover */
 .module-card:hover {
   box-shadow: 0 8px 32px rgba(26,127,55,0.13);
   transform: translateY(-2px) scale(1.01);

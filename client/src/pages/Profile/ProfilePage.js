@@ -1,9 +1,13 @@
+// Import React and hooks for state management
 import React, { useState } from 'react';
+// Import CSS for profile page styling
 import '../../assets/css/profile.css';
 
+// Default avatar SVG for users without uploaded avatars
 const DEFAULT_AVATAR =
   'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90"><circle cx="45" cy="45" r="45" fill="%23d1fae5"/><circle cx="45" cy="38" r="18" fill="%23a7f3d0"/><ellipse cx="45" cy="70" rx="25" ry="15" fill="%23a7f3d0"/></svg>';
 
+// Mock user data for demonstration
 const mockUser = {
   name: 'Jane Doe',
   email: 'jane.doe@email.com',
@@ -12,32 +16,42 @@ const mockUser = {
   bio: 'Full Stack Developer passionate about building impactful solutions.'
 };
 
+// ProfilePage component: User profile management with edit functionality
 function ProfilePage() {
+  // State for user data
   const [user, setUser] = useState(mockUser);
+  // State to track edit mode
   const [editMode, setEditMode] = useState(false);
+  // State for form data during editing
   const [form, setForm] = useState(user);
+  // State for avatar preview during editing
   const [avatarPreview, setAvatarPreview] = useState(user.avatar || DEFAULT_AVATAR);
 
+  // Handle form field changes
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // Enable edit mode
   const handleEdit = () => {
     setEditMode(true);
   };
 
+  // Cancel editing and reset form
   const handleCancel = () => {
     setForm(user);
     setAvatarPreview(user.avatar || DEFAULT_AVATAR);
     setEditMode(false);
   };
 
+  // Save profile changes
   const handleSave = (e) => {
     e.preventDefault();
     setUser({ ...form, avatar: avatarPreview === DEFAULT_AVATAR ? '' : avatarPreview });
     setEditMode(false);
   };
 
+  // Handle avatar file upload
   const handleAvatarChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -55,12 +69,14 @@ function ProfilePage() {
         <h2>My Profile</h2>
       </div>
       <div className="profile-card">
+        {/* Avatar display with preview during edit */}
         <img
           src={editMode ? avatarPreview : user.avatar || DEFAULT_AVATAR}
           alt="Avatar"
           className="profile-avatar"
         />
         <form onSubmit={handleSave}>
+          {/* File upload for avatar in edit mode */}
           {editMode && (
             <div style={{ marginBottom: '1rem' }}>
               <input
@@ -72,6 +88,7 @@ function ProfilePage() {
             </div>
           )}
           <div className="profile-info">
+            {/* Name field */}
             <div>
               <span className="profile-label">Name:</span>
               {editMode ? (
@@ -86,6 +103,7 @@ function ProfilePage() {
                 <span>{user.name}</span>
               )}
             </div>
+            {/* Email field */}
             <div>
               <span className="profile-label">Email:</span>
               {editMode ? (
@@ -100,6 +118,7 @@ function ProfilePage() {
                 <span>{user.email}</span>
               )}
             </div>
+            {/* Phone field */}
             <div>
               <span className="profile-label">Phone:</span>
               {editMode ? (
@@ -113,6 +132,7 @@ function ProfilePage() {
                 <span>{user.phone}</span>
               )}
             </div>
+            {/* Bio field */}
             <div>
               <span className="profile-label">Bio:</span>
               {editMode ? (
@@ -127,6 +147,7 @@ function ProfilePage() {
               )}
             </div>
           </div>
+          {/* Action buttons: Save/Cancel in edit mode, Edit in view mode */}
           {editMode ? (
             <div style={{ display: 'flex', gap: '1rem' }}>
               <button type="submit" className="edit-btn">Save</button>

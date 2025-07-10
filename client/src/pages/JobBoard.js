@@ -1,28 +1,35 @@
+// Import React and hooks for state management
 import React, { useState } from 'react';
 
+// JobBoard component: Main page for job search with geolocation features
 function JobBoard() {
+  // State to store location status message
   const [locationStatus, setLocationStatus] = useState('');
 
+  // Function to get user's current location using browser geolocation API
   const getLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
+          // Success callback: format coordinates and update status
           const lat = position.coords.latitude.toFixed(4);
           const lng = position.coords.longitude.toFixed(4);
           setLocationStatus(`📍 Location detected: ${lat}, ${lng}`);
         },
         (error) => {
+          // Error callback: show error message
           setLocationStatus('❌ Unable to get location');
         }
       );
     } else {
+      // Browser doesn't support geolocation
       setLocationStatus('❌ Geolocation not supported');
     }
   };
 
   return (
     <div className="jobboard-container">
-      {/* Header */}
+      {/* Header section */}
       <header className="header">
         <div className="container">
           <h1>Job Board + Geo-Location</h1>
@@ -32,13 +39,15 @@ function JobBoard() {
       {/* Main Content */}
       <main className="main-content">
         <div className="container">
-          {/* Search Section */}
+          {/* Search Section with filters and location */}
           <section className="search-section">
             <div className="search-form">
               <div className="search-row">
+                {/* Job search input */}
                 <div className="search-input">
                   <input type="text" placeholder="Search jobs..." id="jobSearch" />
                 </div>
+                {/* Category filter dropdown */}
                 <div className="filter-select">
                   <select id="categoryFilter">
                     <option value="all">All Categories</option>
@@ -48,14 +57,16 @@ function JobBoard() {
                     <option value="healthcare">Healthcare</option>
                   </select>
                 </div>
+                {/* Location button to get user's coordinates */}
                 <button className="location-btn" type="button" onClick={getLocation}>📍 Get Location</button>
                 <button className="search-btn" type="button">Search Jobs</button>
               </div>
+              {/* Display location status message */}
               <div className="location-status" id="locationStatus">{locationStatus}</div>
             </div>
           </section>
 
-          {/* Map Section */}
+          {/* Map Section: Interactive job locations map */}
           <section className="map-section">
             <div className="map-container">
               <div className="map-placeholder">
@@ -66,7 +77,7 @@ function JobBoard() {
             </div>
           </section>
 
-          {/* Jobs Grid */}
+          {/* Jobs Grid: List of available job positions */}
           <section className="jobs-section">
             <h2>Available Jobs</h2>
             <div className="jobs-grid">

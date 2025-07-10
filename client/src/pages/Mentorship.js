@@ -1,17 +1,22 @@
+// Import React and hooks for state management
 import React, { useState } from 'react';
+// Import CSS for mentorship page styling
 import '../assets/css/mentorship.css';
 
+// List of navigation tabs for the mentorship module
 const tabList = [
   { id: 'mentors', label: 'Find Mentors' },
   { id: 'reports', label: 'Progress Reports' },
 ];
 
+// Mentorship component: Main page for finding mentors and viewing progress reports
 function Mentorship() {
+  // State to track the currently active tab
   const [activeTab, setActiveTab] = useState('mentors');
 
   return (
     <div className="mentorship-container">
-      {/* Header */}
+      {/* Header section */}
       <header className="header">
         <div className="container">
           <h1>Mentorship + Reports</h1>
@@ -35,10 +40,10 @@ function Mentorship() {
         </div>
       </nav>
 
-      {/* Main Content */}
+      {/* Main Content: Render content based on active tab */}
       <main className="main-content">
         <div className="container">
-          {/* Mentors Tab */}
+          {/* Mentors Tab: List of available mentors */}
           {activeTab === 'mentors' && (
             <section id="mentors" className="tab-content active">
               <div className="mentors-list">
@@ -146,7 +151,7 @@ function Mentorship() {
             </section>
           )}
 
-          {/* Reports Tab */}
+          {/* Reports Tab: Progress and activity reports */}
           {activeTab === 'reports' && (
             <section id="reports" className="tab-content active">
               <div className="reports-dashboard">

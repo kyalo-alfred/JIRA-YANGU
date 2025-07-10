@@ -1,6 +1,9 @@
+// Import React and hooks for state management
 import React, { useState } from 'react';
+// Import CSS for mentorship page styling
 import '../../assets/css/mentorship.css';
 
+// Mock mentor data for demonstration
 const mockMentors = [
   {
     id: 1,
@@ -28,13 +31,20 @@ const mockMentors = [
   }
 ];
 
+// MentorshipPage component: Display mentors and handle mentorship requests
 function MentorshipPage() {
+  // State for tracking mentorship requests
   const [requests, setRequests] = useState([]);
+  // State for modal visibility
   const [showModal, setShowModal] = useState(false);
+  // State for selected mentor in modal
   const [selectedMentor, setSelectedMentor] = useState(null);
+  // State for request message
   const [message, setMessage] = useState('');
+  // State for submission status
   const [submitted, setSubmitted] = useState(false);
 
+  // Open modal for requesting mentorship
   const openModal = (mentor) => {
     setSelectedMentor(mentor);
     setShowModal(true);
@@ -42,11 +52,13 @@ function MentorshipPage() {
     setSubmitted(false);
   };
 
+  // Close modal and reset state
   const closeModal = () => {
     setShowModal(false);
     setSelectedMentor(null);
   };
 
+  // Handle mentorship request submission
   const handleSubmit = (e) => {
     e.preventDefault();
     setRequests([
@@ -62,6 +74,7 @@ function MentorshipPage() {
         <h2>Mentorship</h2>
         <p>Connect with experienced mentors for guidance</p>
       </div>
+      {/* Display list of available mentors */}
       <div className="mentors-listings">
         {mockMentors.map(mentor => (
           <div className="mentor-card" key={mentor.id}>
@@ -72,7 +85,7 @@ function MentorshipPage() {
           </div>
         ))}
       </div>
-      {/* Modal */}
+      {/* Mentorship Request Modal */}
       {showModal && selectedMentor && (
         <div className="modal-overlay" style={{ position: 'fixed', top:0, left:0, right:0, bottom:0, background: 'rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center', zIndex:1000 }}>
           <div className="modal-content" style={{ background:'#fff', borderRadius:'8px', padding:'2rem', minWidth:'320px', boxShadow:'0 2px 16px rgba(0,0,0,0.12)' }}>
@@ -101,6 +114,7 @@ function MentorshipPage() {
           </div>
         </div>
       )}
+      {/* Display submitted mentorship requests */}
       {requests.length > 0 && (
         <div className="requests-section">
           <h3>Your Mentorship Requests</h3>
